@@ -1,0 +1,13 @@
+// db/tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"] // 👈 ここで Node.js の型を明示
+  },
+  "include": ["prisma/**/*.ts"]
+}
