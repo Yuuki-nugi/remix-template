@@ -5,9 +5,10 @@ import { MemoId } from "~/shared/value-objects/memo-value-objects";
 type Props = {
   item: MemoViewModel;
   onEdit: (id: MemoId) => void;
+  onDelete: (id: MemoId) => void;
 };
 
-export function MemoListItem({ item, onEdit }: Props) {
+export function MemoListItem({ item, onEdit, onDelete }: Props) {
   return (
     <li className="mb-2">
       <span className="mr-4">{item.text.getValue()}</span>
@@ -17,13 +18,15 @@ export function MemoListItem({ item, onEdit }: Props) {
       >
         編集
       </button>
-      <Form method="post" className="inline">
+      <Form
+        method="post"
+        action={`${item.id.getValue()}/delete`}
+        className="inline"
+      >
         <input type="hidden" name="id" value={item.id.getValue()} />
         <button
-          type="submit"
-          name="_intent"
-          value="delete"
           className="bg-red-500 text-white px-2 py-1"
+          onClick={() => onDelete(item.id)}
         >
           削除
         </button>
