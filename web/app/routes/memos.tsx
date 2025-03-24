@@ -1,11 +1,11 @@
 import { redirect, type ActionFunctionArgs } from "@remix-run/node";
 import { useFetcher, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
-import { MemoUsecase } from "~/domains/memos/memo-usecase";
 import { MemoId, MemoText } from "~/shared/value-objects/memo-value-objects";
 import { MemoViewModel } from "~/view/memo/memo-view-model";
-import { createMemoRepository } from "~/domains/memos/memo-repository-factory";
+import { createMemoRepository } from "~/shared/repositories/memo/memo-repository-factory";
 import { MemoListItem } from "~/view/memo/components/MemoListItem";
+import { createMemoUsecase } from "~/shared/usecases/memo/memo-usecase-factory";
 
 // ローダーでアイテム一覧取得
 export async function loader() {
@@ -17,7 +17,7 @@ export async function loader() {
 }
 
 export async function action({ request }: ActionFunctionArgs) {
-  const memoUsecase = new MemoUsecase(createMemoRepository());
+  const memoUsecase = createMemoUsecase();
 
   const form = await request.formData();
   const intent = form.get("_intent");

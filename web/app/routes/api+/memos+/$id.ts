@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
-import { createMemoRepository } from "~/domains/memos/memo-repository-factory";
+import { createMemoRepository } from "~/shared/repositories/memo/memo-repository-factory";
 import { MemoId } from "~/shared/value-objects/memo-value-objects";
 
 export async function loader({ params }: LoaderFunctionArgs) {

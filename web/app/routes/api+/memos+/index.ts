@@ -1,4 +1,4 @@
-import { createMemoRepository } from "~/domains/memos/memo-repository-factory";
+import { createMemoRepository } from "~/shared/repositories/memo/memo-repository-factory";
 
 export async function loader() {
   const memoRepository = createMemoRepository();

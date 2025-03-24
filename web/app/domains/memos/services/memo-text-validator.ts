@@ -1,5 +1,5 @@
 import { MemoText } from "../memo";
-import { MemoRepository } from "../memo-repository";
+import { MemoRepository } from "../../../shared/repositories/memo/memo-repository";
 
 export class MemoTextValidator {
   constructor(private readonly memoRepository: MemoRepository) {}

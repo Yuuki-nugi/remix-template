@@ -1,10 +1,11 @@
 import { MemoId, MemoText } from "~/shared/value-objects/memo-value-objects";
-import { MemoRepository } from "./memo-repository";
+import { MemoRepository } from "../../shared/repositories/memo/memo-repository";
 import { MemoTextValidator } from "./services/memo-text-validator";
 import { MemoDTO } from "~/shared/dto/memo/memo-dto";
 import { MemoDtoCreator } from "./dto-creator";
+import { MemoUsecase } from "~/shared/usecases/memo/memo-usecase";
 
-export class MemoUsecase {
+export class MemoUsecaseImpl implements MemoUsecase {
   constructor(private readonly memoRepository: MemoRepository) {}
 
   async createMemo(text: MemoText): Promise<MemoDTO> {

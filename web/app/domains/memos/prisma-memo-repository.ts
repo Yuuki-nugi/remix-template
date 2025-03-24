@@ -1,6 +1,6 @@
 import { prisma } from "~/domains/lib/prisma";
 import { Memo } from "./memo";
-import { MemoRepository } from "./memo-repository";
+import { MemoRepository } from "../../shared/repositories/memo/memo-repository";
 import { MemoId, MemoText } from "~/shared/value-objects/memo-value-objects";
 
 export class PrismaMemoRepository implements MemoRepository {

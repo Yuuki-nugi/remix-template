@@ -1,5 +1,5 @@
 import { MemoId, MemoText } from "~/shared/value-objects/memo-value-objects";
-import { Memo } from "./memo";
+import { Memo } from "../../../domains/memos/memo";
 
 export interface MemoRepository {
   findAll(): Promise<Memo[]>;
