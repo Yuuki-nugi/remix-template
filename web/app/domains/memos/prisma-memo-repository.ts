@@ -1,4 +1,4 @@
-import { prisma } from "~/shared/lib/prisma";
+import { prisma } from "~/domains/lib/prisma";
 import { Memo } from "./memo";
 import { MemoRepository } from "./memo-repository";
 import { MemoId, MemoText } from "~/shared/value-objects/memo-value-objects";
