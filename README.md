@@ -24,3 +24,11 @@
 2. `pnpm prisma migrate dev`
 3. `pnpm prisma generate`
 ※Webで型推論が更新されなかったら、`Reload Window`などする。
+
+## 実装ルール
+### Web
+#### 依存関係
+- `app/domains/*` を `app/routes/*` `app/view/*`から参照してはならない。
+- `app/view/*` `app/routes/*` を `app/domains/*` から参照してはならない。
+
+### その他
